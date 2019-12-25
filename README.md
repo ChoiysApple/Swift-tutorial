@@ -190,3 +190,43 @@ String Interpolation - display value of variable in String
 - for - in → same with Python
 - while → same with it in other language
 - repeat - while → same with **do - while**
+
+### 9.  Optional
+represents either a wrapped value or **nil or not**, ?
+Why optional? → explicit expression, for safety
+```
+enum Optional<Wrapped>: ExpressibleByNiliteral {
+         case none
+         case some(Wrapped)
+}
+
+let optionalValue: Optional<Int> = nil
+let optionalValue: Int? =nil
+```
+
+- Implicitly Unwrapped Optional !
+```
+var implicitlyUnwrappedOptionalValue: Int! = 100
+
+switch implicitlyUnwrappedOptionalValue {
+case .none:
+    print("This Optional variable is nil")
+case .some(let value):
+    print("Value is \(value)")
+}
+```
+- ! vs ?
+```
+var implicitlyUnwrappedOptionalValue: Int! = 100
+
+// can be used like normal variable
+implicitlyUnwrappedOptionalValue = implicitlyUnwrappedOptionalValue + 1
+
+var optionalValue: Int? = 100
+
+// cannot be used like normal variable
+optionalValue = optionalValue + 1
+```
+
+
+
