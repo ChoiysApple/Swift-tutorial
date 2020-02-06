@@ -19,8 +19,17 @@ class ViewController: UIViewController {
         
         diceImageView1.image = #imageLiteral(resourceName: "DiceOne")
         diceImageView2.image = #imageLiteral(resourceName: "DiceSix")
+         
+        
     }
 
+    @IBAction func rollBtnClicked(_ sender: UIButton) {
+        print("Button clicked")
+        
 
+        diceImageView1.image = [ #imageLiteral(resourceName: "DiceOne"),  #imageLiteral(resourceName: "DiceTwo"),  #imageLiteral(resourceName: "DiceThree"),  #imageLiteral(resourceName: "DiceFour"),  #imageLiteral(resourceName: "DiceFive"),  #imageLiteral(resourceName: "DiceSix") ][Int.random(in: 0 ... 5)]
+        diceImageView2.image = [ #imageLiteral(resourceName: "DiceOne"),  #imageLiteral(resourceName: "DiceTwo"),  #imageLiteral(resourceName: "DiceThree"),  #imageLiteral(resourceName: "DiceFour"),  #imageLiteral(resourceName: "DiceFive"),  #imageLiteral(resourceName: "DiceSix") ][Int.random(in: 0 ... 5)]
+    }
+    
 }
 

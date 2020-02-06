@@ -39,6 +39,9 @@
                                 <state key="normal" title="Roll!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="05x-Iy-G1b"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
