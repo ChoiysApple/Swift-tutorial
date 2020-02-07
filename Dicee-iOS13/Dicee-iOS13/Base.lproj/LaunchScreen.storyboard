@@ -19,7 +19,7 @@
                                 <rect key="frame" x="-30" y="0.0" width="474" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DiceeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="L73-FM-GDd">
-                                <rect key="frame" x="11" y="320" width="392" height="256"/>
+                                <rect key="frame" x="109" y="384" width="196.00000000000006" height="128"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
