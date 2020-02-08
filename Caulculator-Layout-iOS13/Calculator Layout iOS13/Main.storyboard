@@ -31,7 +31,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="gC2-i9-XzD" firstAttribute="centerY" secondItem="DL3-Q6-ODc" secondAttribute="centerY" id="S2q-4U-SnY"/>
-                                            <constraint firstAttribute="trailing" secondItem="gC2-i9-XzD" secondAttribute="trailing" id="Wrx-2T-ebe"/>
                                             <constraint firstAttribute="trailing" secondItem="gC2-i9-XzD" secondAttribute="trailing" constant="50" id="fOj-k3-atG"/>
                                         </constraints>
                                     </view>
