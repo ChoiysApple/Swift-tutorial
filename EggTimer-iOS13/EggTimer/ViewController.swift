@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let hardnessTimes = ["Soft": 5, "Medium": 7, "Hard": 13]
+    let timer = Timer()
 
-
+    
+    @IBAction func hardnessPressed(_ sender: UIButton) {
+        let hardness = sender.currentTitle!
+        
+        print(hardnessTimes[hardness]!)
+        
+    }
+    
+    
 }
