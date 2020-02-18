@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     var qnum = 0
     
+    // question lists
     let question = [
         ["Snail have teeth", "True"],
         ["Fish can cough", "True"],
@@ -26,26 +27,33 @@ class ViewController: UIViewController {
     ]
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        questionLabel.text = question[qnum][0]
         
-
     }
-
+    
     @IBAction func answerPressed(_ sender: UIButton) {
         
-        if (qnum == question[0].count){
+        // Check answer
+        if (sender.currentTitle == question[qnum][1]){
+            print("Correct")
+        }else{
+            print("Wrong")
+        }
+        
+        // safty check
+        qnum += 1
+        print("qnum:",qnum, " Total:", question.count)
+        if (qnum >= question.count){
+            print("Quiz finished")
             questionLabel.text = "Finished!"
             return
         }
-            
         
-        quistionManager(questionNumber: qnum)
-        qnum += 1
-    }
+        // display question
+        questionLabel.text = question[qnum][0]
+        
+    }// [END] answerPressed
     
-    func quistionManager(questionNumber: Int){
-        questionLabel.text = question[questionNumber][0]
-    }
     
     
 }
