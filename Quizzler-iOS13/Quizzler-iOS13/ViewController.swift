@@ -16,45 +16,54 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseBtn: UIButton!
     
     var qnum = 0
+    var isFinished: Bool = false
     
-    // question lists
-    let question = [
-        ["Snail have teeth", "True"],
-        ["Fish can cough", "True"],
-        ["Tomato is vegitable","True"],
-        ["Potato is root of plant","False"],
-        ["Freddie Mucury was born in London", "False"]
+    let questionList = [
+        questionStruct(question: "Snail have teeth", answer: "True"),
+        questionStruct(question: "Fish can cough", answer: "True"),
+        questionStruct(question: "Tomato is vegitable", answer: "True"),
+        questionStruct(question: "Potato is root of plant", answer: "False"),
+        questionStruct(question: "Freddie Mucury was born in London", answer: "False"),
     ]
     
+    
     override func viewDidLoad() {
-        questionLabel.text = question[qnum][0]
-        
+        questionLabel.text = questionList[qnum].question
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
+        if (isFinished){
+            return
+        }
         
         // Check answer
-        if (sender.currentTitle == question[qnum][1]){
-            print("Correct")
-        }else{
-            print("Wrong")
+        if (sender.currentTitle == questionList[qnum].answer){
+            sender.backgroundColor = UIColor.green
+        }
+        else{
+            sender.backgroundColor = UIColor.red
         }
         
         // safty check
         qnum += 1
-        print("qnum:",qnum, " Total:", question.count)
-        if (qnum >= question.count){
+        
+        updateUI()
+        
+    }// [END] answerPressed
+    
+    func updateUI(){
+        if (qnum >= questionList.count){
             print("Quiz finished")
             questionLabel.text = "Finished!"
+            isFinished = true
             return
         }
         
         // display question
-        questionLabel.text = question[qnum][0]
-        
-    }// [END] answerPressed
-    
-    
+        questionLabel.text = questionList[qnum].question
+        trueBtn.backgroundColor = UIColor.clear
+        falseBtn.backgroundColor = UIColor.clear
+    }
     
 }
 
