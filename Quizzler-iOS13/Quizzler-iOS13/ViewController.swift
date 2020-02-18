@@ -50,10 +50,9 @@ class ViewController: UIViewController {
         // safty check
         qnum += 1
         if (qnum >= questionList.count){
-            print("Quiz finished")
+            progressBar.progress = 1.0
             questionLabel.text = "Finished!"
             isFinished = true
-            progressBar.progress = 1.0
             return
         }
         
