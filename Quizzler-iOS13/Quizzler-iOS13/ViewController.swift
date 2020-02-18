@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     var qnum = 0
     var isFinished: Bool = false
+    let endTime = 0.5
     
     let questionList = [
         questionStruct(question: "Snail have teeth", answer: "True"),
@@ -28,7 +29,9 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        // initialize settings
         questionLabel.text = questionList[qnum].question
+        progressBar.progress = 0.0
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
@@ -46,24 +49,28 @@ class ViewController: UIViewController {
         
         // safty check
         qnum += 1
-        
-        updateUI()
-        
-    }// [END] answerPressed
-    
-    func updateUI(){
         if (qnum >= questionList.count){
             print("Quiz finished")
             questionLabel.text = "Finished!"
             isFinished = true
+            progressBar.progress = 1.0
             return
         }
         
+        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        
+    }// [END] answerPressed
+    
+    @objc func updateUI(){
         // display question
-        questionLabel.text = questionList[qnum].question
+        questionLabel.text = self.questionList[self.qnum].question
         trueBtn.backgroundColor = UIColor.clear
         falseBtn.backgroundColor = UIColor.clear
+        
+        progressBar.progress = Float(qnum)/Float(questionList.count)
     }
+    
+
     
 }
 
