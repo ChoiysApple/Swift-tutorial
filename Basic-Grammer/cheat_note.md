@@ -28,10 +28,10 @@ String Interpolation - display value of variable in String
 
 - **let** - constant
 - **var** - variable
-
+```
     let constant: String = "let for conatant"
     var variable: String = "var for variable"
-
+```
 ### 3. Data types
 
 - Bool → ture, false
@@ -44,7 +44,7 @@ String Interpolation - display value of variable in String
 - Any - can have any dtype
 - AnyObject - can have all class type
 - nill == null
-
+```
     var someAny: Any = 100
     someAny = "any type"
     someAny = 123.12
@@ -56,11 +56,11 @@ String Interpolation - display value of variable in String
     
     someAny = nil         // error
     someAnyObject = nil   // error
-
+```
 ### 5. Collection types
 
 - Array - order
-
+```
     var intArr: Array<Int> = Array<Int>()
     // var intArr: Array<Int> = []
     
@@ -73,16 +73,16 @@ String Interpolation - display value of variable in String
     intArr.removeAll()
     
     intArr.count
-
+```
 - Dictionary - key & value
-
+```
     var dict: Dictionary<Sting, Any> = [String: Any]()
     
     dict["someKey"] = "value"    // ["someKey":"value"]
     dict.removeValue(forKey:"someKey")
-
+```
 - Set - unique, non order
-
+```
     var Set: Set<Int> = Set<Int>()
     
     set.insert(1)
@@ -99,11 +99,11 @@ String Interpolation - display value of variable in String
     union.sorted()                            // [1, 2, 3, 4, 5, 6, 7]
     setA.intersection(setB)                   // [5, 3, 4]
     setA.subtracting(setB)                    // [2, 1]
-
+```
 ### 6. Function
 
 - Basic form
-
+```
     func function(){
         return
     }
@@ -115,40 +115,40 @@ String Interpolation - display value of variable in String
     func sum(a:Int, b:Int) -> Int{
         return a + b
     }
-
+```
 - Parameter default value 
     able to omit the parameter, default parameter placed at last
-
+```
     func greeting(friend: String, me: String="Choi") { print("Hello \(friend) I'm \(me)")
     
     greeting(friend: "John")               // Hello John I'm Choi
     greeting(friend: "John", me: "Jane")   // Hello John I'm Jane
-
+```
 - Argument Label
     Using different parameter name for function call
-
+```
     func greeting(to friend: String, from me: String) { print("Hello \(friend) I'm \(me)")
     
     greeting(to: "John", from: "Jane")   // Hello John I'm Jane
-
+```
 - Dynamic parameters
     Only one per function
-
+```
     func greetingToFriends(frineds: String...) -> String{
         return "Hello \(friends)!"
     }
     
     print(greetingToFriends(friends: "john", "jane")    // Hello ["john", "jane"]
-
+```
 - Function as data type
-
+```
     var greetFunction: (String, String) -> Void = greeting(to:from:)
     greetFunction("john", "jane")    // Hello jane, I'm john
     f
     func runAnother(function: (String, String) -> Void) { function("john", "jane") }
     runAnother(greeting(friend:me:))       // Hello jane, I'm john
     runAnother(function: greetFucntion)    // Hello jane, I'm john
-    
+  ```
 
 ### 7.  Conditional expressions
 
@@ -156,15 +156,15 @@ String Interpolation - display value of variable in String
     can omit () but not {}, condition must be **bool**
 
     Bool contition
-    
+```
     if (contition) { }
     else if (condition) { }
     else contitinon {}
-
+```
 - Switch
     can use most basic dtypes, default essential, automatically break
    fallthrough → makes expressions like switch without break in other language
-
+```
     switch someInteger {
     case 0:
         print("zero")
@@ -184,7 +184,7 @@ String Interpolation - display value of variable in String
     default:
         print("unknown")
     }
-
+```
 ### 8.  Loop
 
 - for - in → same with Python
