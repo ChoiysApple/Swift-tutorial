@@ -15,32 +15,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueBtn: UIButton!
     @IBOutlet weak var falseBtn: UIButton!
     
-    var qnum = 0
-    var isFinished: Bool = false
+    var quizManager = QuizManager()
+    
     let endTime = 0.5
-    
-    let questionList = [
-        questionStruct(question: "Snail have teeth", answer: "True"),
-        questionStruct(question: "Fish can cough", answer: "True"),
-        questionStruct(question: "Tomato is vegitable", answer: "True"),
-        questionStruct(question: "Potato is root of plant", answer: "False"),
-        questionStruct(question: "Freddie Mucury was born in London", answer: "False"),
-    ]
-    
+
     
     override func viewDidLoad() {
         // initialize settings
-        questionLabel.text = questionList[qnum].question
+        questionLabel.text = quizManager.questionList[0].question
         progressBar.progress = 0.0
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
-        if (isFinished){
+        
+        if (quizManager.isFinished){
+            trueBtn.backgroundColor = UIColor.clear
+            falseBtn.backgroundColor = UIColor.clear
             return
         }
         
         // Check answer
-        if (sender.currentTitle == questionList[qnum].answer){
+        if (quizManager.checkAnswer(sender.currentTitle!)){
             sender.backgroundColor = UIColor.green
         }
         else{
@@ -48,11 +43,11 @@ class ViewController: UIViewController {
         }
         
         // safty check
-        qnum += 1
-        if (qnum >= questionList.count){
+        quizManager.qnum += 1
+        if (quizManager.checkEnd()){
             progressBar.progress = 1.0
             questionLabel.text = "Finished!"
-            isFinished = true
+            quizManager.isFinished = true
             return
         }
         
@@ -62,11 +57,11 @@ class ViewController: UIViewController {
     
     @objc func updateUI(){
         // display question
-        questionLabel.text = self.questionList[self.qnum].question
+        questionLabel.text = quizManager.questionList[quizManager.qnum].question
         trueBtn.backgroundColor = UIColor.clear
         falseBtn.backgroundColor = UIColor.clear
         
-        progressBar.progress = Float(qnum)/Float(questionList.count)
+        progressBar.progress = quizManager.currentProgress()
     }
     
 
