@@ -34,7 +34,8 @@ struct QuizManager{
     }
     
     // check if quiz ended
-    func checkEnd() -> Bool{
+    mutating func checkEnd() -> Bool{
+        self.qnum += 1
         if (qnum >= questionList.count){
             return true
         }
@@ -45,6 +46,10 @@ struct QuizManager{
     
     func currentProgress() -> Float{
          return Float(qnum)/Float(questionList.count)
+    }
+    
+    func getQuizText() -> String{
+        return questionList[qnum].question
     }
     
 }// [END] Struct

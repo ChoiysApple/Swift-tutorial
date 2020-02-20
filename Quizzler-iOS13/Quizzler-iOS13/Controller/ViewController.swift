@@ -43,7 +43,6 @@ class ViewController: UIViewController {
         }
         
         // safty check
-        quizManager.qnum += 1
         if (quizManager.checkEnd()){
             progressBar.progress = 1.0
             questionLabel.text = "Finished!"
@@ -53,11 +52,12 @@ class ViewController: UIViewController {
         
         Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         
+        
     }// [END] answerPressed
     
     @objc func updateUI(){
         // display question
-        questionLabel.text = quizManager.questionList[quizManager.qnum].question
+        questionLabel.text = quizManager.getQuizText()
         trueBtn.backgroundColor = UIColor.clear
         falseBtn.backgroundColor = UIColor.clear
         
