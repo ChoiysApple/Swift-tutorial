@@ -17,7 +17,7 @@ struct Story{
     let choice2Destination: Int
 
     
-    init(_ title: String, _ choice1: String, _ choice1Destination: Int, _ choice2Destination: Int, _ choice2: String){
+    init(title: String, choice1: String, choice1Destination: Int, choice2: String, choice2Destination: Int){
         self.title = title
         self.choice1 = choice1
         self.choice2 = choice2
