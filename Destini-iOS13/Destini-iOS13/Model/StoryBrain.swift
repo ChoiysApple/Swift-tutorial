@@ -29,19 +29,19 @@ struct StoryManager{
             choice2: "It's him or me! You take the knife and stab him.", choice2Destination: 4
         ),
         Story(
-            title: "What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups?",
-            choice1: "The", choice1Destination: 0,
-            choice2: "End", choice2Destination: 0
+            title: "What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups? \n The End",
+            choice1: "Try again", choice1Destination: 0,
+            choice2: "", choice2Destination: 3
         ),
         Story(
-            title: "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in.",
-            choice1: "The", choice1Destination: 0,
-            choice2: "End", choice2Destination: 0
+            title: "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in. \nThe End",
+            choice1: "Try again", choice1Destination: 0,
+            choice2: "", choice2Destination: 4
         ),
         Story(
-            title: "You bond with the murderer while crooning verses of 'Can you feel the love tonight'. He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: 'Try the pier.'",
-            choice1: "The", choice1Destination: 0,
-            choice2: "End", choice2Destination: 0
+            title: "You bond with the murderer while crooning verses of 'Can you feel the love tonight'. He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: 'Try the pier.' \nThe End",
+            choice1: "Try again", choice1Destination: 0,
+            choice2: "", choice2Destination: 5
         )]
     
     func getStory() -> (title: String, choice1: String, choice2: String){
