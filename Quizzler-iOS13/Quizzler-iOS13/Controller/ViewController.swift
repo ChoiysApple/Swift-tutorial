@@ -14,16 +14,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueBtn: UIButton!
     @IBOutlet weak var falseBtn: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var quizManager = QuizManager()
     
     let endTime = 0.5
-
+    var score = 0
     
     override func viewDidLoad() {
         // initialize settings
         questionLabel.text = quizManager.questionList[0].question
         progressBar.progress = 0.0
+        scoreLabel.text = quizManager.getCurrentScore()
+
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
@@ -61,6 +64,7 @@ class ViewController: UIViewController {
         trueBtn.backgroundColor = UIColor.clear
         falseBtn.backgroundColor = UIColor.clear
         
+        scoreLabel.text = quizManager.getCurrentScore()
         progressBar.progress = quizManager.currentProgress()
     }
     

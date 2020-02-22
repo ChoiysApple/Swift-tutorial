@@ -31,17 +31,17 @@ struct StoryManager{
         Story(
             title: "What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups? \n The End",
             choice1: "Try again", choice1Destination: 0,
-            choice2: "", choice2Destination: 3
+            choice2: "Exit", choice2Destination: -1
         ),
         Story(
             title: "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in. \nThe End",
             choice1: "Try again", choice1Destination: 0,
-            choice2: "", choice2Destination: 4
+            choice2: "Exit", choice2Destination: -1
         ),
         Story(
             title: "You bond with the murderer while crooning verses of 'Can you feel the love tonight'. He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: 'Try the pier.' \nThe End",
             choice1: "Try again", choice1Destination: 0,
-            choice2: "", choice2Destination: 5
+            choice2: "Exit", choice2Destination: -1
         )]
     
     func getStory() -> (title: String, choice1: String, choice2: String){
@@ -49,7 +49,10 @@ struct StoryManager{
     }
     
     mutating func sendChoice(choice: String){
-        if (choice == self.storyText[storyIndex].choice1){
+        if (self.storyIndex == -1){
+            exit(-1)
+        }
+        else if (choice == self.storyText[storyIndex].choice1){
             self.storyIndex = self.storyText[storyIndex].choice1Destination
         }
         else if(choice == self.storyText[storyIndex].choice2){
