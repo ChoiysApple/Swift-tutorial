@@ -12,6 +12,7 @@ import Foundation
 struct QuizManager{
     
     var qnum = 0
+    var correct = 0
     var isFinished: Bool = false
     
     let questionList = [
@@ -23,9 +24,10 @@ struct QuizManager{
     ]
     
     // compare actural & user answer
-    func checkAnswer(_ answer: String) -> Bool{
+    mutating func checkAnswer(_ answer: String) -> Bool{
         // Check answer
         if (answer == questionList[qnum].answer){
+            correct += 1
             return true
         }
         else{
@@ -48,9 +50,14 @@ struct QuizManager{
          return Float(qnum)/Float(questionList.count)
     }
     
+    func getCurrentScore() -> String{
+        return "Score"+String(correct)+"/"+String(questionList.count)
+    }
+    
     func getQuizText() -> String{
         return questionList[qnum].question
     }
+    
     
 }// [END] Struct
 
