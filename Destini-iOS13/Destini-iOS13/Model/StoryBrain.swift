@@ -48,14 +48,15 @@ struct StoryManager{
         return (title: storyText[storyIndex].title, choice1: storyText[storyIndex].choice1, choice2: storyText[storyIndex].choice2)
     }
     
-//    func sendChoice(choice: String){
-//        if (choice == "Choice 1"){
-//            storyIndex = storyText[storyIndex].choice1Destination
-//        }
-//        else if(choice == "Choice 1"){
-//            storyIndex = storyText[storyIndex].choice1Destination
-//        }
-//    }
+    mutating func sendChoice(choice: String){
+        if (choice == self.storyText[storyIndex].choice1){
+            self.storyIndex = self.storyText[storyIndex].choice1Destination
+        }
+        else if(choice == self.storyText[storyIndex].choice2){
+            self.storyIndex = self.storyText[storyIndex].choice2Destination
+        }
+        print(storyIndex)
+    }
     
     
 }

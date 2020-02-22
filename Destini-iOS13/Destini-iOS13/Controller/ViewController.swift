@@ -14,11 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice1Button: UIButton!
     @IBOutlet weak var choice2Button: UIButton!
     
-    let storyManager = StoryManager()
+    var storyManager = StoryManager()
     
     // button click
     @IBAction func choiceBtnClick(_ sender: UIButton) {
-//        storyManager.sendChoice(choice: sender.currentTitle!)
+        storyManager.sendChoice(choice: sender.currentTitle!)
+        print(sender.currentTitle!)
         updateUI()
     }
     
