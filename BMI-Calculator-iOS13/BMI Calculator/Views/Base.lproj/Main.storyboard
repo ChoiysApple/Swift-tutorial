@@ -105,6 +105,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="calcuateBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Da-f0-2qp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
