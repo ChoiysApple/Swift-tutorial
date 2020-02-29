@@ -33,12 +33,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calcuateBtnClicked(_ sender: UIButton) {
-        print("BMI = ", calculateBMI(height, weight))
         
+        let secondVC = SecondViewController()
+        
+        secondVC.bmiValue = calculateBMI(height, weight)
+        self.present(secondVC, animated: true, completion: nil)
     }
     
-    func calculateBMI(_ height: Float, _ weight: Float) -> Float{
-        return weight/(pow(height,2))
+    
+    func calculateBMI(_ height: Float, _ weight: Float) -> String{
+        return String(format: "%.2f", weight/(pow(height,2)))
     }
     
 }
