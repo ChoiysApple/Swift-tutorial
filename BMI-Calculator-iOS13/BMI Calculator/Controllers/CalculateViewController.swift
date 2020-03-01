@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculateViewController: UIViewController {
 
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
@@ -33,11 +33,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calcuateBtnClicked(_ sender: UIButton) {
+
+        let resultVC = ResultViewController()
+
         
-        let secondVC = SecondViewController()
-        
-        secondVC.bmiValue = calculateBMI(height, weight)
-        self.present(secondVC, animated: true, completion: nil)
     }
     
     
