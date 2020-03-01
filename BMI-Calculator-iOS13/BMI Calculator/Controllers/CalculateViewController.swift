@@ -34,9 +34,8 @@ class CalculateViewController: UIViewController {
 
     @IBAction func calcuateBtnClicked(_ sender: UIButton) {
 
-        let resultVC = ResultViewController()
 
-        
+        self.performSegue(withIdentifier: "goToResults", sender: self)
     }
     
     
