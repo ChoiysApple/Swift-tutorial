@@ -23,7 +23,7 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func recaulculateClicked(_ sender: UIButton) {
-//        self.performSegue(withIdentifier: "goToCalculate", sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
     
 
