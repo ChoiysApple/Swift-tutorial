@@ -15,7 +15,7 @@ class CalculateViewController: UIViewController {
     
     var height: Float = 1.5
     var weight: Float = 100.0
-    
+
     @IBAction func heightSliderMoved(_ sender: UISlider) {
         heightLabel.text = String(format:"%.2f", sender.value)+"m"
         height = sender.value
