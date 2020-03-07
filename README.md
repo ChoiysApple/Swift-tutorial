@@ -4,7 +4,7 @@
 This [document](./Basic-Grammer/flach.md) contains basic grammer information
 
 ### 1. Dice Dicee-iOS13	
-Random dice rolling app
+Random dice rolling app, AutoLayout
 
 ### 1-1. Magic-8-Ball-iOS13	
 Random responding robot app
@@ -13,7 +13,7 @@ Random responding robot app
 Practice constraints and auto layout
 
 ### 3. Xylophone-iOS13	
-
+Play audio file
 
 ### 4. Egg timer
 Timer app using Timer API
