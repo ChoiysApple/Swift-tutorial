@@ -10,9 +10,9 @@ import Foundation
 
 struct DataManager{
     
-    var height: Float?
-    var weight: Float?
-    var bmiValue: String?
+    var height: Float = 1.5
+    var weight: Float = 100.0
+//    var bmiValue: String?
 
     mutating func setHeight(_ height: Float){
         self.height = height
@@ -28,9 +28,9 @@ struct DataManager{
 //        print(self.bmiValue)
 //    }
     
-        func calculateBMI() -> String{
-            return String(format: "%.1f", weight!/(pow(height!,2)))
-        }
+    func calculateBMI() -> Float{
+        return weight/(pow(height,2))
+    }
 
     
     

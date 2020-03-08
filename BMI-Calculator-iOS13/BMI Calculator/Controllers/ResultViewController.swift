@@ -13,13 +13,13 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     
-    var bmiValue = "0.0"
+    var bmiValue: Float?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(bmiValue)
-        resultLabel.text = bmiValue
+        print(bmiValue!)
+        resultLabel.text = String(format: "%.1f", bmiValue!)
     }
     
     @IBAction func recaulculateClicked(_ sender: UIButton) {
