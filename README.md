@@ -1,7 +1,7 @@
 # Swift-bootcamp
 
 ### 0. Basic Grammer
-This [document](./Basic-Grammer/flach.md) contains basic grammer information
+This [document](./Basic-Grammer/cheat_note.md) contains basic grammer information
 
 ### 1. Dice Dicee-iOS13	
 Random dice rolling app, AutoLayout
@@ -26,3 +26,4 @@ Story game app using MVC pattern
 
 ### 6. BMI Calculator
 MVC, View changing usin segue
+Advanced [optional unwrapping](./Basic-Grammer/Swift_Optional_special.md)
