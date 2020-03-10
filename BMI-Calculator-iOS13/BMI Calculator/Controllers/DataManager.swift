@@ -6,7 +6,7 @@
 //  Copyright © 2020 Angela Yu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct DataManager{
     
@@ -32,11 +32,11 @@ struct DataManager{
     }
     
     func getAdvice() -> String{
-        return bmi?.advice
+        return bmi?.advice ?? ""
     }
     
     func getColor() -> UIColor{
-        return bmi?.color
+        return bmi?.color ?? #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
     }
         
     

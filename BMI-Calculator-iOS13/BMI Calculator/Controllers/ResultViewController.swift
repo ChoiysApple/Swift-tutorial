@@ -12,6 +12,7 @@ class ResultViewController: UIViewController {
 
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var backgroundView: UIImageView!
     
     var bmiValue: String?
     var advice: String?
@@ -22,7 +23,8 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
 
         resultLabel.text = bmiValue
-        
+        adviceLabel.text = advice
+        backgroundView.backgroundColor = color
     }
     
     @IBAction func recaulculateClicked(_ sender: UIButton) {
