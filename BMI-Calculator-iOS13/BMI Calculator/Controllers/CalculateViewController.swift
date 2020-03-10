@@ -39,7 +39,9 @@ class CalculateViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults"{
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.bmiValue = dataManager.calculateBMI(heightSlider.value, weightSlider.value)
+            destinationVC.bmiValue = dataManager.getBMIvalue()
+            destinationVC.advice =  dataManager.getAdvice()
+            destinationVC.color = dataManager.getColor()
         }
     }
     
