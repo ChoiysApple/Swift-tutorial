@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D1E2AF7240BCCB400906B94 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E2AF6240BCCB400906B94 /* ResultViewController.swift */; };
 		7D1E2AF92410E7B300906B94 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E2AF82410E7B300906B94 /* DataManager.swift */; };
+		7D1E2AFB2417817800906B94 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E2AFA2417817800906B94 /* BMI.swift */; };
 		AD0B9F7A230D61800065EFD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B9F79230D61800065EFD9 /* AppDelegate.swift */; };
 		AD0B9F7C230D61800065EFD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B9F7B230D61800065EFD9 /* SceneDelegate.swift */; };
 		AD0B9F7E230D61800065EFD9 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B9F7D230D61800065EFD9 /* CalculateViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		7D1E2AF6240BCCB400906B94 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		7D1E2AF82410E7B300906B94 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = "BMI Calculator/Controllers/DataManager.swift"; sourceTree = SOURCE_ROOT; };
+		7D1E2AFA2417817800906B94 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BMI.swift; path = "BMI Calculator/Controllers/BMI.swift"; sourceTree = SOURCE_ROOT; };
 		AD0B9F76230D61800065EFD9 /* BMI Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMI Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0B9F79230D61800065EFD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD0B9F7B230D61800065EFD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7D1E2AF82410E7B300906B94 /* DataManager.swift */,
+				7D1E2AFA2417817800906B94 /* BMI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				7D1E2AF92410E7B300906B94 /* DataManager.swift in Sources */,
 				AD0B9F7A230D61800065EFD9 /* AppDelegate.swift in Sources */,
 				AD0B9F7C230D61800065EFD9 /* SceneDelegate.swift in Sources */,
+				7D1E2AFB2417817800906B94 /* BMI.swift in Sources */,
 				7D1E2AF7240BCCB400906B94 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

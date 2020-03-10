@@ -12,17 +12,17 @@ class CalculateViewController: UIViewController {
 
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var heightSlider: UISlider!
+    @IBOutlet weak var weightSlider: UISlider!
     
     var dataManager = DataManager()
     
     @IBAction func heightSliderMoved(_ sender: UISlider) {
         heightLabel.text = String(format:"%.2f", sender.value)+"m"
-        dataManager.setHeight(sender.value)
     }
     
     @IBAction func weightSliderMoved(_ sender: UISlider) {
         weightLabel.text = String(format:"%.1f", sender.value)+"Kg"
-        dataManager.setWeight(sender.value)
     }
     
     
@@ -39,7 +39,7 @@ class CalculateViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults"{
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.bmiValue = dataManager.calculateBMI()
+            destinationVC.bmiValue = dataManager.calculateBMI(heightSlider.value, weightSlider.value)
         }
     }
     
