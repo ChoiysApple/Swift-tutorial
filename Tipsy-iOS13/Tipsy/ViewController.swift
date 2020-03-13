@@ -10,11 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var billLabel: UITextField!
+    @IBOutlet weak var zeroPctBtn: UIButton!
+    @IBOutlet weak var tenPctBtn: UIButton!
+    @IBOutlet weak var twentyPctBtn: UIButton!
+    @IBOutlet weak var splitLabel: UILabel!
+    
+    
+    var selectedBtn: UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        zeroPctBtn.isSelected = true
+        tenPctBtn.isSelected = false
+        twentyPctBtn.isSelected = false
+        
+        selectedBtn = zeroPctBtn
     }
 
-
+    @IBAction func pctBtnClicked(_ sender: UIButton) {
+        selectedBtn?.isSelected = false
+        sender.isSelected = true
+        selectedBtn = sender
+    }
+    
+    @IBAction func CalculateBtnClicked(_ sender: UIButton) {
+        
+    }
+    
+    
 }
 
