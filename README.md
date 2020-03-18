@@ -12,7 +12,7 @@ Random dice rolling app, AutoLayout
 ### 1-1. Magic-8-Ball-iOS13	
 Random responding robot app
 
-<img src="./screenshot/bot-1.png" width="30%" alt="bot"></img>
+<img src="./screenshot/bot-1.gif" width="30%" alt="bot"></img>
 
 ### 2. Caulculator-Layout-iOS13	
 Practice constraints and auto layout
