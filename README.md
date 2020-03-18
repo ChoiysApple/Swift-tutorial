@@ -36,13 +36,14 @@ Timer app using Timer API
 ### 5. Quizzler
 Quiz app using MVC pattern
 
+<img src="./screenshot/quiz-1.png" width="30%" alt="dice"></img>
+<img src="./screenshot/quiz-2.png" width="30%" alt="dice"></img>
+<img src="./screenshot/quiz-3.gif" width="30%" alt="dice"></img>
 
 ### 5.1 Destini
 Story game app using MVC pattern
 
-<img src="./screenshot/quiz-1.png" width="30%" alt="dice"></img>
-<img src="./screenshot/quiz-2.png" width="30%" alt="dice"></img>
-<img src="./screenshot/quiz-3.gif" width="30%" alt="dice"></img>
+<img src="./screenshot/destini-1.png" width="30%" alt="dice"></img>
 
 
 ### 6. BMI Calculator
