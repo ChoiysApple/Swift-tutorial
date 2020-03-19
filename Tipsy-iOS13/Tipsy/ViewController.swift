@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     
     var pct: Float = 0.0
     var split: Float = 1.0
-    var numberOfPeople = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +52,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
-        print(sender.stepValue)
-    
+        split = Float(sender.value)
         splitLabel.text = String(format: "%.0f", sender.value)
         
-        //Set the numberOfPeople property as the value of the stepper as a whole number.
-        numberOfPeople = Int(sender.value)
     }
     
     @IBAction func CalculateBtnClicked(_ sender: UIButton) {
