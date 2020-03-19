@@ -12,7 +12,7 @@ Random dice rolling app, AutoLayout
 ### 1-1. Magic-8-Ball-iOS13	
 Random responding robot app
 
-<img src="./screenshot/bot-1.png" width="30%" alt="bot"></img>
+<img src="./screenshot/bot-1.gif" width="30%" alt="bot"></img>
 
 ### 2. Caulculator-Layout-iOS13	
 Practice constraints and auto layout
@@ -36,13 +36,14 @@ Timer app using Timer API
 ### 5. Quizzler
 Quiz app using MVC pattern
 
+<img src="./screenshot/quiz-1.png" width="30%" alt="dice"></img>
+<img src="./screenshot/quiz-2.png" width="30%" alt="dice"></img>
+<img src="./screenshot/quiz-3.gif" width="30%" alt="dice"></img>
 
 ### 5.1 Destini
 Story game app using MVC pattern
 
-<img src="./screenshot/quiz-1.png" width="30%" alt="dice"></img>
-<img src="./screenshot/quiz-2.png" width="30%" alt="dice"></img>
-<img src="./screenshot/quiz-3.gif" width="30%" alt="dice"></img>
+<img src="./screenshot/destini-1.png" width="30%" alt="dice"></img>
 
 
 ### 6. BMI Calculator
