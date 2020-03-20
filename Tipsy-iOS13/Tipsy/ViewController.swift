@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     var selectedBtn: UIButton?
     
+    var bill: Float = 0.0
     var pct: Float = 0.0
     var split: Float = 1.0
     
@@ -54,13 +55,13 @@ class ViewController: UIViewController {
     @IBAction func stepperChanged(_ sender: UIStepper) {
         split = Float(sender.value)
         splitLabel.text = String(format: "%.0f", sender.value)
-        
     }
     
     @IBAction func CalculateBtnClicked(_ sender: UIButton) {
         print(billLabel.text!)
         print(pct)
         print(split)
+        print(calculateTip(bill, pct, split))
     }
     
     
