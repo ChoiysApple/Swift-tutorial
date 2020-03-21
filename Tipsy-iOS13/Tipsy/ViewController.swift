@@ -32,10 +32,6 @@ class ViewController: UIViewController {
         tenPctBtn.isSelected = false
         twentyPctBtn.isSelected = false
         selectedBtn = zeroPctBtn
-        
-        // initialize stepper
-
-        
     }
 
     @IBAction func pctBtnClicked(_ sender: UIButton) {
@@ -64,11 +60,9 @@ class ViewController: UIViewController {
         print(calculateTip(bill, pct, split))
     }
     
-    
     func calculateTip(_ bill: Float, _ pct: Float, _ split: Float) -> Float{
         return bill*pct/split
     }
-    
     
 }
 
