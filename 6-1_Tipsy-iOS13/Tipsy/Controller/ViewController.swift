@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         if segue.identifier == "goToResult"{
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.result = String(format: "%.1f", calculateTip(bill, pct, split))
-            destinationVC.optionComment = "Split between \(String(format: "%.0f", split)) people, with \(String(format: "%.0f", (pct*100)))% tip."
+            destinationVC.optionComment = "Split between \(String(format: "%.0f", split)) people, with \(String(format: "%.0f", (pct-1)*100))% tip."
         }
     }
 
