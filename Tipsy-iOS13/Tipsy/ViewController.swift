@@ -38,11 +38,11 @@ class ViewController: UIViewController {
         selectedBtn?.isSelected = false
         
         if sender == zeroPctBtn{
-            pct = 0.0
+            pct = 1.0
         }else if sender == tenPctBtn{
-            pct = 0.1
+            pct = 1.1
         }else{
-            pct = 0.2
+            pct = 1.2
         }
         sender.isSelected = true
         selectedBtn = sender
