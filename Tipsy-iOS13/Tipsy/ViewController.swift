@@ -56,10 +56,12 @@ class ViewController: UIViewController {
     @IBAction func CalculateBtnClicked(_ sender: UIButton) {
         bill = Float(billLabel.text!)!
         
-        print(bill)
-        print(pct)
-        print(split)
-        print(calculateTip(bill, pct, split))
+        print("bill: \(bill)")
+        print("pct: \(pct)%")
+        print("split: \(split)")
+        print("result: \(calculateTip(bill, pct, split))")
+        
+        self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
     func calculateTip(_ bill: Float, _ pct: Float, _ split: Float) -> Float{
@@ -70,9 +72,17 @@ class ViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
     }
-
-
     
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        dataManager.calculateBMI(heightSlider.value, weightSlider.value
+//        )
+//        if segue.identifier == "goToResults"{
+//            let destinationVC = segue.destination as! ResultViewController
+//            destinationVC.bmiValue = dataManager.getBMIvalue()
+//            destinationVC.advice =  dataManager.getAdvice()
+//            destinationVC.color = dataManager.getColor()
+//        }
+//    }
+
 }
 
