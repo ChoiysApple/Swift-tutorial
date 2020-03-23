@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     var bill: Float = 0.0
     var pct: Float = 0.0
-    var split: Float = 1.0
+    var split: Float = 2.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func CalculateBtnClicked(_ sender: UIButton) {
-        print(billLabel.text!)
+        bill = Float(billLabel.text!)!
+        
+        print(bill)
         print(pct)
         print(split)
         print(calculateTip(bill, pct, split))
@@ -63,6 +65,14 @@ class ViewController: UIViewController {
     func calculateTip(_ bill: Float, _ pct: Float, _ split: Float) -> Float{
         return bill*pct/split
     }
+    
+    // down keyboard when tapping outside of keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+    }
+
+
+    
     
 }
 
