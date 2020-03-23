@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func CalculateBtnClicked(_ sender: UIButton) {
-        bill = Float(billLabel.text!)!
+        bill = Float(billLabel.text!) ?? 0.0
         
         print("bill: \(bill)")
         print("pct: \(pct)%")
@@ -73,16 +73,15 @@ class ViewController: UIViewController {
             self.view.endEditing(true)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        dataManager.calculateBMI(heightSlider.value, weightSlider.value
-//        )
-//        if segue.identifier == "goToResults"{
-//            let destinationVC = segue.destination as! ResultViewController
-//            destinationVC.bmiValue = dataManager.getBMIvalue()
-//            destinationVC.advice =  dataManager.getAdvice()
-//            destinationVC.color = dataManager.getColor()
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let bmi = calculateTip(bill, pct, split)
+        
+        if segue.identifier == "goToResult"{
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.result = String(format: "%.1f", bmi)
+            destinationVC.optionComment = "Split between \(String(format: "%.0f", split)) people, with \(String(format: "%.0f", (pct*100)))% tip."
+        }
+    }
 
 }
 
