@@ -74,11 +74,9 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let bmi = calculateTip(bill, pct, split)
-        
         if segue.identifier == "goToResult"{
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.result = String(format: "%.1f", bmi)
+            destinationVC.result = String(format: "%.1f", calculateTip(bill, pct, split))
             destinationVC.optionComment = "Split between \(String(format: "%.0f", split)) people, with \(String(format: "%.0f", (pct*100)))% tip."
         }
     }
