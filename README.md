@@ -49,3 +49,17 @@ Story game app using MVC pattern
 ### 6. BMI Calculator
 MVC, View changing usin segue
 Advanced [optional unwrapping](./Basic-Grammer/Swift_Optional_special.md)
+
+<img src="./screenshot/bmi-1.png" width="20%" alt="dice"></img>
+<img src="./screenshot/bmi-2.png" width="20%" alt="dice"></img>
+<img src="./screenshot/bmi-3.png" width="20%" alt="dice"></img>
+<img src="./screenshot/bmi-4.png" width="20%" alt="dice"></img>
+
+### 6-1. Tipsy
+
+
+<img src="./screenshot/tipsy-1.png" width="30%" alt="dice"></img>
+<img src="./screenshot/tipsy-2.png" width="30%" alt="dice"></img>
+
+
+
