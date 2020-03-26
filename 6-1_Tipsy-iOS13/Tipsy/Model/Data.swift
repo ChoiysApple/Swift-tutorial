@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+
+struct Data{
+    var bill: Float
+    var pct: Float
+    var split: Float 
+}

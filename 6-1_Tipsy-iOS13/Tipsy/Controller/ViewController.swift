@@ -20,9 +20,7 @@ class ViewController: UIViewController {
     
     var selectedBtn: UIButton?
     
-    var bill: Float = 0.0
-    var pct: Float = 0.0
-    var split: Float = 2.0
+    var data: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()

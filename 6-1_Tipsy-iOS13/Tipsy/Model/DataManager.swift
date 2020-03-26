@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+var data: Data?
+
+func getBill(_ bill: Float){
+    data?.bill = bill
+}
