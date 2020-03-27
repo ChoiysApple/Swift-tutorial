@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var billLabel: UITextField!
@@ -20,7 +21,10 @@ class ViewController: UIViewController {
     
     var selectedBtn: UIButton?
     
-    var data: Data?
+    var pct: Float = 0.0
+    var split: Float = 2.0
+    
+    var dataManager = DataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,30 +46,21 @@ class ViewController: UIViewController {
         }else{
             pct = 1.2
         }
+        
         sender.isSelected = true
         selectedBtn = sender
     }
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
-        split = Float(sender.value)
         splitLabel.text = String(format: "%.0f", sender.value)
+        split = Float(sender.value)
     }
     
     @IBAction func CalculateBtnClicked(_ sender: UIButton) {
-        bill = Float(billLabel.text!) ?? 0.0
-        
-        print("bill: \(bill)")
-        print("pct: \(pct)%")
-        print("split: \(split)")
-        print("result: \(calculateTip(bill, pct, split))")
-        
+        dataManager.setData(Float(billLabel.text!) ?? 0.0 , pct, split)
         self.performSegue(withIdentifier: "goToResult", sender: self)
     }
-    
-    func calculateTip(_ bill: Float, _ pct: Float, _ split: Float) -> Float{
-        return bill*pct/split
-    }
-    
+        
     // down keyboard when tapping outside of keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
@@ -74,10 +69,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult"{
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.result = String(format: "%.1f", calculateTip(bill, pct, split))
-            destinationVC.optionComment = "Split between \(String(format: "%.0f", split)) people, with \(String(format: "%.0f", (pct-1)*100))% tip."
+            destinationVC.result = dataManager.calculateTip()
+            destinationVC.optionComment = dataManager.createComment()
         }
     }
 
 }
-

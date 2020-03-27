@@ -8,19 +8,18 @@
 
 import Foundation
 
-var data: Data?
-
-
-
-func getBill() -> Float{
-    return data?.bill ?? 0.0
+struct DataManager{
+    var data: Data?
+    
+    mutating func setData(_ bill: Float, _ pct: Float, _ split: Float){
+        data = Data(bill: bill, pct: pct, split: split)
+    }
+    
+    func calculateTip() -> String{
+        return String(format: "%.1f", data!.bill*data!.pct/data!.split)
+    }
+    
+    func createComment() -> String{
+        return "Split between \(String(format: "%.0f", data!.split)) people, with \(String(format: "%.0f", (data!.pct-1)*100))% tip."
+    }
 }
-
-func getPct() -> Float{
-    return data?.pct ?? 0.0
-}
-
-func getSplit() -> Float{
-    return data?.split ?? 2.0
-}
-
