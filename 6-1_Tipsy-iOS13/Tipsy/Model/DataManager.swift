@@ -10,6 +10,17 @@ import Foundation
 
 var data: Data?
 
-func getBill(_ bill: Float){
-    data?.bill = bill
+
+
+func getBill() -> Float{
+    return data?.bill ?? 0.0
 }
+
+func getPct() -> Float{
+    return data?.pct ?? 0.0
+}
+
+func getSplit() -> Float{
+    return data?.split ?? 2.0
+}
+
