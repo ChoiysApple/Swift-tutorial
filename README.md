@@ -57,9 +57,10 @@ Advanced [optional unwrapping](./Basic-Grammer/Swift_Optional_special.md)
 
 ### 6-1. Tipsy
 
-
 <img src="./screenshot/tipsy-1.png" width="30%" alt="dice"></img>
 <img src="./screenshot/tipsy-2.png" width="30%" alt="dice"></img>
+
+### 7. Clima
 
 
 
