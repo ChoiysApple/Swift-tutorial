@@ -1,7 +1,7 @@
 # Swift-bootcamp
 
 ### 0. Basic Grammer
-This [document](./Basic-Grammer/cheat_note.md) contains basic grammer information
+This [document](./0_Basic-Grammer/cheat_note.md) contains basic grammer information
 
 ### 1. Dice Dicee-iOS13	
 Random dice rolling app, AutoLayout
@@ -48,7 +48,7 @@ Story game app using MVC pattern
 
 ### 6. BMI Calculator
 MVC, View changing usin segue
-Advanced [optional unwrapping](./Basic-Grammer/Swift_Optional_special.md)
+Advanced [optional unwrapping](./0_Basic-Grammer/Swift_Optional_special.md)
 
 <img src="./screenshot/bmi-1.png" width="20%" alt="dice"></img>
 <img src="./screenshot/bmi-2.png" width="20%" alt="dice"></img>
@@ -61,5 +61,5 @@ Advanced [optional unwrapping](./Basic-Grammer/Swift_Optional_special.md)
 <img src="./screenshot/tipsy-2.png" width="30%" alt="dice"></img>
 
 ### 7. Clima
-Dark mode, UITextField, Swift protocol, Delegate Design pattern, JSON, GPS, Swift [Protocol](./Basic-Grammer/protocol.md)
+Dark mode, UITextField, Swift protocol, Delegate Design pattern, JSON, GPS, Swift [Protocol](./0_Basic-Grammer/protocol.md)
 
