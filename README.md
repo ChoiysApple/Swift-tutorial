@@ -61,5 +61,5 @@ Advanced [optional unwrapping](./0_Basic-Grammer/Swift_Optional_special.md)
 <img src="./screenshot/tipsy-2.png" width="30%" alt="dice"></img>
 
 ### 7. Clima
-Dark mode, UITextField, Swift protocol, Delegate Design pattern, JSON, GPS, Swift [Protocol](./0_Basic-Grammer/protocol.md)
+Dark mode, UITextField, Swift protocol, Delegate Design pattern, JSON, GPS, Swift [Protocol](./0_Basic-Grammer/Protocol.md)
 
