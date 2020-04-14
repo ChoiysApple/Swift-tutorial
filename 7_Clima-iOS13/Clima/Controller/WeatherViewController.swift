@@ -46,7 +46,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     // when textfield stop editing (keyboard dismissed)
     func textFieldDidEndEditing(_ textField: UITextField) {
-        searchField.text = ""   // clear textField
+        searchField.text = "Search"   // clear textField
     }
     
 
