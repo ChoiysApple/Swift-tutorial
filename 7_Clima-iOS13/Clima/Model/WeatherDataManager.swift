@@ -15,4 +15,20 @@ struct WeatherDataManager{
         let completeURL = "\(baseURL)&q=\(city)"
         print(completeURL)
     }
+    
+    func preformRequest(url: String){
+        // 1. Create URL
+        if let url = URL(string: url){          // URL initializer create optional URL
+            // 2. Create URL Session
+
+        }
+        
+        
+        // 3. Give the session a task
+        
+        
+        // 4. Start the task
+        
+        
+    }
 }
