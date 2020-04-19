@@ -31,7 +31,9 @@ struct WeatherDataManager{
         }
     }
     
+    // handle api task
     func handler(data: Data?, response: URLResponse?, error: Error?){
+        // if error exists
         if error != nil{
             print(error!)
             return
