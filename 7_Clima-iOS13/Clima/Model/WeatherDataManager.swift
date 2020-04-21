@@ -36,7 +36,8 @@ struct WeatherDataManager{
         // if error exists
         if error != nil{
             print(error!)
-            return  // end function
+            return
+            
         }
         
         if let safeData = data{
