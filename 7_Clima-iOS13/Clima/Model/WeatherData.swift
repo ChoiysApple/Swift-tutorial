@@ -11,6 +11,7 @@ import Foundation
 struct WeatherData: Decodable{
     // Value name must follow JSON property name
     let name: String
+    let timezone: Int
     let main: Main
     let weather: [Weather]
 }
@@ -21,4 +22,5 @@ struct Main: Decodable{
 
 struct Weather: Decodable{
     let description: String
+    let main: String
 }
