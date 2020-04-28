@@ -13,9 +13,14 @@ struct WeatherModel {
     let conditionId: Int
     let temperature: Double
     
-    // docs https://openweathermap.org/weather-conditions
-    func getConditionName(weatherId: Int) -> String{
-        switch weatherId/100 {
+    var temperatureString: String{
+        return String.init(format: "%.1f", temperature)
+    }
+    
+    // computed property
+    var conditionName: String {
+        // docs https://openweathermap.org/weather-conditions
+        switch conditionId/100 {
         case 2:
             return "cloud.bolt"
         case 3:
@@ -27,7 +32,7 @@ struct WeatherModel {
         case 7:
             return "cloud.fog"
         case 8:
-            if weatherId == 800 {
+            if conditionId == 800 {
                 return "sun.max"
             } else {
                 return "cloud.bolt"
