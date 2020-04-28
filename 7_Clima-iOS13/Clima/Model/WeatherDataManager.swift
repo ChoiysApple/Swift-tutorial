@@ -52,35 +52,13 @@ struct WeatherDataManager{
         do{
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             print("decoded: \(decodedData)")
-            print(getConditionName(weatherId: decodedData.weather[0].id))
+            
+            let weather = WeatherModel(cityName: decodedData.name, conditionId: decodedData.weather[0].id, temperature: decodedData.main.temp)
+            print(weather.getConditionName(weatherId: decodedData.weather[0].id))
+            
         }catch {
             print(error)
         }
     }
-    
-    // docs https://openweathermap.org/weather-conditions
-    func getConditionName(weatherId: Int) -> String{
-        switch weatherId/100 {
-        case 2:
-            return "cloud.bolt"
-        case 3:
-            return "cloud.drizzle"
-        case 5:
-            return "cloud.rain"
-        case 6:
-            return "cloud.snow"
-        case 7:
-            return "cloud.fog"
-        case 8:
-            if weatherId == 800 {
-                return "sun.max"
-            } else {
-                return "cloud.bolt"
-            }
-        default:
-            return "cloud"
-        }
-    }
-    
     
 }
