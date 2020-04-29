@@ -8,18 +8,19 @@
 
 import Foundation
 
-struct WeatherData: Decodable{
+// Codable typealies: Protocal combined Decodable & Encodable
+struct WeatherData: Codable{
     // Value name must follow JSON property name
     let name: String
     let main: Main
     let weather: [Weather]
 }
 
-struct Main: Decodable{
+struct Main: Codable{
     let temp: Double
 }
 
-struct Weather: Decodable{
+struct Weather: Codable{
     let id: Int
     let description: String
 }

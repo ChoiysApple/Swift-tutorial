@@ -53,8 +53,7 @@ struct WeatherDataManager{
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             print("decoded: \(decodedData)")
             
-            let weather = WeatherModel(cityName: decodedData.name, conditionId: decodedData.weather[0].id, temperature: decodedData.main.temp)
-            print(weather.getConditionName(weatherId: decodedData.weather[0].id))
+            return WeatherModel(cityName: decodedData.name, conditionId: decodedData.weather[0].id, temperature: decodedData.main.temp)
             
         }catch {
             print(error)
