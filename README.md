@@ -62,6 +62,7 @@ Advanced [optional unwrapping](./0_Basic-Grammer/Swift_Optional_special.md)
 
 ### 7. Clima
 Dark mode, UITextField, Delegate Design pattern, JSON, GPS, Swift [Protocol](./0_Basic-Grammer/Closure.md), [Closure](./0_Basic-Grammer/Protocol.md)
+[Open weather map API](https://openweathermap.org/current) used
 
 
 <img src="./screenshot/clima-1.png" width="30%" alt="dice"></img>
