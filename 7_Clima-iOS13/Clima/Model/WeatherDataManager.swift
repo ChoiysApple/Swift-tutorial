@@ -8,12 +8,13 @@
 
 import Foundation
 
-// Delegate
+//MARK: Delegate protocol
 protocol WeatherManagerDelegate {
     func updateWeather(weatherModel: WeatherModel)
     func failedWithError(error: Error)
 }
 
+//MARK: DataManager struct
 struct WeatherDataManager{
     let baseURL = "https://api.openweathermap.org/data/2.5/weather?appid=4e415e4ab2aaed09e04d8419beedee19&units=metric"
     
@@ -25,6 +26,7 @@ struct WeatherDataManager{
         performRequest(url: completeURL )
     }
     
+    //MARK: URL methods
     func performRequest(url: String){
         // 1. Create URL
         if let url = URL(string: url){          // URL initializer create optional URL
@@ -47,7 +49,6 @@ struct WeatherDataManager{
                         self.delegate?.updateWeather(weatherModel: weather)
                     }
                 }
-
             }
 
             // what task do: go to url -> grab data -> come back

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+class WeatherViewController: UIViewController {
 
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -25,47 +25,57 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         searchField.delegate = self
     }
 
-    @IBAction func searchBtnClicked(_ sender: UIButton) {
-        searchField.endEditing(true)    //dismiss keyboard
-        print(searchField.text!)
-        
-        searchWeather()
-    }
+}
+ 
+//MARK:- TextField extension
+extension WeatherViewController: UITextFieldDelegate {
     
-    // when keyboard return clicked
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchField.endEditing(true)    //dismiss keyboard
-        print(searchField.text!)
-        
-        searchWeather()
-        return true
-    }
+        @IBAction func searchBtnClicked(_ sender: UIButton) {
+            searchField.endEditing(true)    //dismiss keyboard
+            print(searchField.text!)
+            
+            searchWeather()
+        }
     
-    // when textfield deselected
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        // by using "textField" (not "searchField") this applied to any textField in this Controller(cuz of delegate = self)
-        if textField.text != "" {
+        func searchWeather(){
+            if let cityName = searchField.text{
+                weatherManager.fetchWeather(cityName)
+            }
+        }
+        
+        // when keyboard return clicked
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            searchField.endEditing(true)    //dismiss keyboard
+            print(searchField.text!)
+            
+            searchWeather()
             return true
-        }else{
-            textField.placeholder = "Type something here"
-            return false            // check if city name is valid
         }
-    }
-    
-    // when textfield stop editing (keyboard dismissed)
-    func textFieldDidEndEditing(_ textField: UITextField) {
-//        searchField.text = ""   // clear textField
-    }
-    
-    func searchWeather(){
-        if let cityName = searchField.text{
-            weatherManager.fetchWeather(cityName)
+        
+        // when textfield deselected
+        func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+            // by using "textField" (not "searchField") this applied to any textField in this Controller(cuz of delegate = self)
+            if textField.text != "" {
+                return true
+            }else{
+                textField.placeholder = "Type something here"
+                return false            // check if city name is valid
+            }
         }
-    }
+        
+        // when textfield stop editing (keyboard dismissed)
+        func textFieldDidEndEditing(_ textField: UITextField) {
+    //        searchField.text = ""   // clear textField
+        }
+}
+
+//MARK:- View update extension
+extension WeatherViewController: WeatherManagerDelegate {
     
     func updateWeather(weatherModel: WeatherModel){
         DispatchQueue.main.sync {
             temperatureLabel.text = weatherModel.temperatureString
+            cityLabel.text = weatherModel.cityName
             self.conditionImageView.image = UIImage(systemName: weatherModel.conditionName)
         }
     }
@@ -73,6 +83,4 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     func failedWithError(error: Error){
         print(error)
     }
-
 }
- 
