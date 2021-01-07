@@ -28,10 +28,8 @@ struct WeatherDataManager{
     }
     
     func fetchWeather(_ latitude: Double, _ longitude: Double){
-        let lat = String(format: "%f", latitude)
-        let lon = String(format: "%f", longitude)
 
-        let completeURL = "\(baseURL)&lat=\(lat)&lon=\(lon)"
+        let completeURL = "\(baseURL)&lat=\(latitude)&lon=\(longitude)"
         print(completeURL)
         performRequest(url: completeURL )
     }
