@@ -20,8 +20,18 @@ struct WeatherDataManager{
     
     var delegate: WeatherManagerDelegate?
     
+    //MARK:- fetchWeather
     func fetchWeather(_ city: String){
         let completeURL = "\(baseURL)&q=\(city)"
+        print(completeURL)
+        performRequest(url: completeURL )
+    }
+    
+    func fetchWeather(_ latitude: Double, _ longitude: Double){
+        let lat = String(format: "%f", latitude)
+        let lon = String(format: "%f", longitude)
+
+        let completeURL = "\(baseURL)&lat=\(lat)&lon=\(lon)"
         print(completeURL)
         performRequest(url: completeURL )
     }
@@ -74,5 +84,4 @@ struct WeatherDataManager{
     }
     
 }
-
 
