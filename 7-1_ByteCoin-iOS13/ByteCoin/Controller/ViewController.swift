@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
@@ -16,7 +16,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        currencyPicker.dataSource = self
+        currencyPicker.delegate = self
+    }
+    
+    let coinManager = CoinManager()
+
+    //MARK: UIPicker Delegate
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1    // return number of columns
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return coinManager.currencyArray.count  // return number of rows
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return coinManager.currencyArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let currencyPicked = coinManager.currencyArray[row]
+        coinManager.getCoinPrice(for: currencyPicked)
     }
 
 
