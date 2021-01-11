@@ -15,13 +15,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     
-    let coinManager = CoinManager()
+    var coinManager = CoinManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
+        coinManager.delegate = self
+        
+        coinManager.fetchCurrency(currency: coinManager.currencyArray[0])
     }
         
     //MARK: UIPicker
@@ -44,9 +47,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     //MARK:- Delegate
-    func updateRate(coinData: String) {
-        print(coinData)
-        //TODO: updateRate
+    func updateRate(coinData: Double) {
+        DispatchQueue.main.sync {
+            rateLabel.text = String(format: "%f", coinData)
+        }
     }
     
     func failedWithError(error: Error) {

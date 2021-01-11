@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: Delegate protocol
 protocol CoinManagerDelegate {
-    func updateRate(coinData: String)
+    func updateRate(coinData: Double)
     func failedWithError(error: Error)
 }
 
@@ -38,26 +38,22 @@ struct CoinManager {
                     self.delegate?.failedWithError(error: error!)
                     return
                 }
-                String(data: data!, encoding: .utf8)
-//                if let safeData = data{
-//                    if let rate = self.parseJSON(coinData: safeData) {
-//                        self.delegate?.updateRate(coinData: rate)
-//                    }
-//                }
+                if let safeData = data{
+                    if let rate = self.parseJSON(coinData: safeData) {
+                        print("JSON decoded: \(rate)")
+                        self.delegate?.updateRate(coinData: rate)
+                    }
+                }
             }
             task.resume()
         }
     }   // [END] of performRequest()
     
     // decode JSON
-    func parseJSON(coinData: Data) -> String?{
+    func parseJSON(coinData: Data) -> Double?{
         let decoder = JSONDecoder()
         do{
-            print("start decode")
             let decodedData = try decoder.decode(CoinData.self, from: coinData)
-            print("decoded")
-            print("decoded: \(decodedData)")
-            
             return decodedData.rate
             
         }catch {

@@ -11,7 +11,5 @@ import Foundation
 // Codable typealies: Protocal combined Decodable & Encodable
 struct CoinData: Codable {
     // Value name must follow JSON property name
-    let asset_id_base: String
-    let asset_id_quote: String
-    let rate: String
+    let rate: Double
 }
