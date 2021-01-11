@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,7 +69,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Ocx-jo-FtC" secondAttribute="bottom" id="4g7-Ag-CSv"/>
                                             <constraint firstAttribute="trailing" secondItem="Ocx-jo-FtC" secondAttribute="trailing" constant="10" id="Qu0-hp-NgW"/>
@@ -84,6 +86,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="CjI-yV-vnC"/>
                         <color key="backgroundColor" name="Background Color"/>
                         <constraints>
                             <constraint firstItem="ct2-jk-pgH" firstAttribute="trailing" secondItem="CjI-yV-vnC" secondAttribute="trailing" id="0NU-ng-zoE"/>
@@ -93,12 +96,11 @@
                             <constraint firstItem="ct2-jk-pgH" firstAttribute="leading" secondItem="CjI-yV-vnC" secondAttribute="leading" id="myB-1G-FSo"/>
                             <constraint firstItem="ct2-jk-pgH" firstAttribute="bottom" secondItem="CjI-yV-vnC" secondAttribute="bottom" id="tCZ-GN-qxe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CjI-yV-vnC"/>
                     </view>
                     <connections>
-                        <outlet property="coinLabel" destination="N2a-Ax-iRV" id="PDi-98-H7d"/>
-                        <outlet property="currencyLabel" destination="MAn-y0-nXv" id="M1e-u5-a84"/>
-                        <outlet property="currencyPicker" destination="ct2-jk-pgH" id="TIt-EJ-PHG"/>
+                        <outlet property="currencyLabel" destination="MAn-y0-nXv" id="oU1-zc-hnv"/>
+                        <outlet property="currencyPicker" destination="ct2-jk-pgH" id="u6N-RW-YN9"/>
+                        <outlet property="rateLabel" destination="N2a-Ax-iRV" id="LeL-xz-Qvi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,15 +109,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bitcoinsign.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Background Color">
-            <color red="0.18799999356269836" green="0.20800000429153442" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50599998235702515" green="0.92500001192092896" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Icon Color">
-            <color red="0.18799999356269836" green="0.20800000429153442" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Title Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Title Color">
+            <color red="0.18799999356269836" green="0.20800000429153442" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
