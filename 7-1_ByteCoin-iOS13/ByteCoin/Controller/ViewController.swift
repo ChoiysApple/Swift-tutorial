@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CoinManagerDelegate {
+class ViewController: UIViewController {
     
     //MARK: IBOutlet
     @IBOutlet weak var currencyPicker: UIPickerView!
@@ -24,10 +24,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         currencyPicker.delegate = self
         coinManager.delegate = self
         
+        // initialize currency rate label
         coinManager.fetchCurrency(currency: coinManager.currencyArray[0])
     }
-        
-    //MARK: UIPicker
+}
+
+//MARK: UIPicker
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1    // return number of columns
     }
@@ -42,9 +45,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let currencyPicked = coinManager.currencyArray[row]
+        
+        // initialize currency label
         currencyLabel.text = currencyPicked
         coinManager.fetchCurrency(currency: currencyPicked)
     }
+}
+
+//MARK:- CoinManager
+extension ViewController: CoinManagerDelegate {
     
     //MARK:- Delegate
     func updateRate(coinData: Double) {
