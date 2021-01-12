@@ -14,9 +14,21 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
-    }
+        
+        //MARK: Animation using loop
+        let title = "⚡️FlashChat"
+        var charIndex = 0.0
+        
+        for i in title{
+            // This timer starts at the same time
+            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
+                self.titleLabel.text?.append(i)
+            }
+            charIndex += 1
+        }
+    }   // [END] viewDidLoad
+    
+    
     
 
 }
