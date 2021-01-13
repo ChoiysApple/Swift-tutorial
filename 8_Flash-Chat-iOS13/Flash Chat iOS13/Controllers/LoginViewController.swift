@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
                     print(e)
                 }else{
                     print(authResult!)
-                    self.performSegue(withIdentifier: SegueIDs.loginToChat, sender: self)
+                    self.performSegue(withIdentifier: ID.loginSegue, sender: self)
                 }
                 
             }

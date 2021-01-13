@@ -17,6 +17,6 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         // CLTyping animation
-        titleLabel.text = "⚡️FlashChat"
+        titleLabel.text = ID.appName
     }
 }

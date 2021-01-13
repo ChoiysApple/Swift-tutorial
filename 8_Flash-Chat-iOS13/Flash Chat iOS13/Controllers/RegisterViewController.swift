@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
                     print(e)
                 }else{
                     print(authResult!)
-                    self.performSegue(withIdentifier: SegueIDs.registerToChat, sender: self)
+                    self.performSegue(withIdentifier: ID.registerSegue, sender: self)
                 }
             }
         }
