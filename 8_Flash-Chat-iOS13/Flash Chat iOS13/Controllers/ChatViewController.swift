@@ -16,7 +16,10 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //MARK:- Navigation bar
+        title = "⚡️FlashChat"
+        navigationItem.hidesBackButton = true
     }
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
