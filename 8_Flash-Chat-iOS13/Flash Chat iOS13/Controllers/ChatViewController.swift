@@ -36,25 +36,30 @@ class ChatViewController: UIViewController {
         
     }
     
+    //MARK:- Message Data Method
     func loadMessage() {
-        messages = []
-        
-        db.collection(FStore.collectionName).getDocuments { (querySnapshot, error) in
+        db.collection(FStore.collectionName).addSnapshotListener { (querySnapshot, error) in
             if let e = error {
                 print("Firestore read error: \(e)")
             } else {
+                self.messages = []
                 for document in querySnapshot!.documents {
                     let data = document.data()
                     if let senderRead = data[FStore.senderField] as? String, let bodyRead = data[FStore.bodyField] as? String {
-                        self.messages.append(Message(sender: senderRead, body: bodyRead))
+                        let newMessage = Message(sender: senderRead, body: bodyRead)
+                        self.messages.append(newMessage)
+                        print("Message read\(newMessage)")
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
+                            print("Reload tableview: Msg loaded")
                         }
                     }
                 }
             }
         }
     }
+    
+
     
     //MARK:- IBActions
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
@@ -77,6 +82,7 @@ class ChatViewController: UIViewController {
                     print("Firestore upload error: \(e)")
                 } else {
                     print("Firestore upload successful")
+                    self.messageTextfield.text = ""
                 }
             }
         }
