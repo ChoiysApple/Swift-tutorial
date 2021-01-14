@@ -24,7 +24,6 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         
         // Navigation bar
-        title = ID.appName
         navigationItem.hidesBackButton = true
         
         loadMessage()
