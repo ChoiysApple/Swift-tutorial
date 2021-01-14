@@ -51,10 +51,13 @@ class ChatViewController: UIViewController {
                     if let senderRead = data[FStore.senderField] as? String, let bodyRead = data[FStore.bodyField] as? String {
                         let newMessage = Message(sender: senderRead, body: bodyRead)
                         self.messages.append(newMessage)
-                        print("Message read\(newMessage)")
+                        print("Read \(newMessage)")
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
-                            print("Reload tableview: Msg loaded")
+                            
+                            let indexPath = IndexPath(row: self.messages.count-1, section: 0)
+                            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+                            
                         }
                     }
                 }
@@ -86,7 +89,9 @@ class ChatViewController: UIViewController {
                     print("Firestore upload error: \(e)")
                 } else {
                     print("Firestore upload successful")
-                    self.messageTextfield.text = ""
+                    DispatchQueue.main.sync {
+                        self.messageTextfield.text = ""
+                    }
                 }
             }
         }
@@ -103,8 +108,25 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messages[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: ID.cellIdentifier, for: indexPath) as! MessageCell
-        cell.messageLabel?.text = "\(messages[indexPath.row].body)"
+        cell.messageLabel?.text = message.body
+        
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.meImageView.isHidden = false
+            cell.youImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: BrandColors.lightPurple)
+            cell.messageLabel.textColor = UIColor(named: BrandColors.purple)
+            cell.messageLabel.textAlignment = .right
+        } else {
+            cell.meImageView.isHidden = true
+            cell.youImageView.isHidden = false
+            cell.messageBubble.backgroundColor = UIColor(named: BrandColors.purple)
+            cell.messageLabel.textColor = UIColor(named: BrandColors.lightPurple)
+            cell.messageLabel.textAlignment = .left
+        }
+        
         return cell
     }
 }
