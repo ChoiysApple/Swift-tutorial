@@ -67,3 +67,9 @@ Dark mode, UITextField, Delegate Design pattern, JSON, GPS, Swift [Protocol](./0
 
 <img src="./screenshot/clima-1.png" width="30%" alt="dice"></img>
 <img src="./screenshot/clima-2.png" width="30%" alt="dice"></img>
+
+### 7-1. ByteCoin
+[CoinAPI](https://www.coinapi.io/)
+
+### 8. FlashChat
+Simple chatting app using [Firebase](https://firebase.google.com/), [Cocoapods](https://cocoapods.org/), [CLTypingLabel](https://github.com/cl7/CLTypingLabel), [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
