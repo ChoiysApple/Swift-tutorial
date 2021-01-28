@@ -88,12 +88,12 @@ class ChatViewController: UIViewController {
                     print("Firestore upload error: \(e)")
                 } else {
                     print("Firestore upload successful")
-                    DispatchQueue.main.sync {
-                        self.messageTextfield.text = ""
-                    }
+                    self.messageTextfield.text = ""
                 }
             }
         }
+        
+        
     }
     
 
