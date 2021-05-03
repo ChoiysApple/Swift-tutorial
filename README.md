@@ -1,4 +1,4 @@
-# Swift-bootcamp
+# Swift-tutorial
 
 ### 0. Basic Grammer
 This [document](./0_Basic-Grammer/cheat_note.md) contains basic grammer information
