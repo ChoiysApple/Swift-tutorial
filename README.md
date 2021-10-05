@@ -1,7 +1,7 @@
 # Swift-tutorial
 
 ### 0. Basic Grammer
-This [document](./0_Basic-Grammer/cheat_note.md) contains basic grammer information
+This [document](./0_Docs/cheat_note.md) contains basic grammer information
 
 ### 1. Dice Dicee-iOS13	
 Random dice rolling app, AutoLayout
